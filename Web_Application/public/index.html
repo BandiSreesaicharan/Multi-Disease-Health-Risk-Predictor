@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Health Risk Predictor</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <h1>Health Risk Predictor</h1>
+
+  <form id="form" class="dashboard">
+
+    <!-- Basic Info -->
+    <div class="card">
+      <h2>Basic Info</h2>
+      <input id="age" type="number" step="any" placeholder="Age" required>
+      <input id="bmi" type="number" step="any" placeholder="BMI" required>
+      <input id="waist" type="number" step="any" placeholder="Waist-Hip Ratio" required>
+    </div>
+
+    <!-- Lifestyle -->
+    <div class="card">
+      <h2>Lifestyle</h2>
+      <input id="activity" type="number" step="any" placeholder="Physical Activity (mins/week)">
+      <input id="diet" type="number" step="any" placeholder="Diet Score">
+      <input id="sleep" type="number" step="any" placeholder="Sleep Hours / Day">
+      <input id="screen" type="number" step="any" placeholder="Screen Time Hours / Day">
+      <input id="alcohol" type="number" step="any" placeholder="Alcohol / Week">
+    </div>
+
+    <!-- Medical History -->
+    <div class="card">
+      <h2>Medical History</h2>
+      <label><input type="checkbox" id="fh_diabetes"> Family Diabetes</label>
+      <label><input type="checkbox" id="htn"> Hypertension History</label>
+      <label><input type="checkbox" id="cvd"> Cardiovascular History</label>
+    </div>
+
+    <!-- Vitals -->
+    <div class="card">
+      <h2>Vitals</h2>
+      <input id="sbp" type="number" step="any" placeholder="Systolic BP">
+      <input id="dbp" type="number" step="any" placeholder="Diastolic BP">
+      <input id="hr" type="number" step="any" placeholder="Heart Rate">
+    </div>
+
+    <!-- Lab Values (Full Width) -->
+    <div class="card full">
+      <h2>Lab Values</h2>
+
+      <div class="lab-grid">
+        <input id="chol" type="number" step="any" placeholder="Total Cholesterol">
+        <input id="hdl" type="number" step="any" placeholder="HDL Cholesterol">
+        <input id="ldl" type="number" step="any" placeholder="LDL Cholesterol">
+        <input id="tri" type="number" step="any" placeholder="Triglycerides">
+
+        <input id="gf" type="number" step="any" placeholder="Glucose Fasting">
+        <input id="gp" type="number" step="any" placeholder="Glucose Postprandial">
+        <input id="ins" type="number" step="any" placeholder="Insulin Level">
+        <input id="hba1c" type="number" step="any" placeholder="HbA1c">
+      </div>
+    </div>
+
+
+    <!-- Categories -->
+    <div class="card">
+      <h2>Categories</h2>
+
+      <div class="field">
+        <label for="education">Education Level</label>
+        <select id="education">
+          <option value="0">No formal</option>
+          <option value="1">Highschool</option>
+          <option value="2">Graduate</option>
+          <option value="3">Postgraduate</option>
+        </select>
+      </div>
+
+      <div class="field">
+        <label for="income">Income Level</label>
+        <select id="income">
+          <option value="0">Low</option>
+          <option value="1">Lower-Middle</option>
+          <option value="2">Middle</option>
+          <option value="3">Upper-Middle</option>
+          <option value="4">High</option>
+        </select>
+      </div>
+
+      <div class="field">
+        <label for="smoking">Smoking Status</label>
+        <select id="smoking">
+          <option value="0">Never</option>
+          <option value="1">Former</option>
+          <option value="2">Current</option>
+        </select>
+      </div>
+    </div>
+
+    <!-- Employment / Ethnicity / Gender -->
+    <div class="card">
+      <h2>Employment</h2>
+      <label><input type="radio" name="emp" value="Employed" checked> Employed</label>
+      <label><input type="radio" name="emp" value="Retired"> Retired</label>
+      <label><input type="radio" name="emp" value="Student"> Student</label>
+      <label><input type="radio" name="emp" value="Unemployed"> Unemployed</label>
+
+      <h2>Ethnicity</h2>
+      <label><input type="radio" name="eth" value="Asian" checked> Asian</label>
+      <label><input type="radio" name="eth" value="Black"> Black</label>
+      <label><input type="radio" name="eth" value="Hispanic"> Hispanic</label>
+      <label><input type="radio" name="eth" value="Other"> Other</label>
+      <label><input type="radio" name="eth" value="White"> White</label>
+
+      <h2>Gender</h2>
+      <label><input type="radio" name="gen" value="Female" checked> Female</label>
+      <label><input type="radio" name="gen" value="Male"> Male</label>
+      <label><input type="radio" name="gen" value="Other"> Other</label>
+    </div>
+
+    <!-- Predict Button -->
+    <div class="center full">
+      <button type="submit">Predict</button>
+    </div>
+
+  </form>
+
+  <!-- Results -->
+  <div id="result"></div>
+
+  <script src="script.js"></script>
+
+</body>
+
+</html>
